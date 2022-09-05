@@ -4,7 +4,7 @@
 
 <b>react-simple-poll</b> is a simple poll component.
 
-# ![](sample.png)
+# ![](sample.PNG)
 
 ## Install
 
