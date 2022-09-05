@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { useState } from "react";
+import { SimplePoll } from "./lib/SimplePoll";
 
 function App() {
+  const pollData = {
+    title: "What is the best burger?",
+    options: [
+      { text: "In-N-Out", votes: 6 },
+      { text: "Burger King", votes: 2 },
+      { text: "McDonald's", votes: 3 },
+    ],
+  };
+
+  const { title, options } = pollData;
+  const [isVoted, setIsVoted] = useState(false);
+
+  console.log({ title });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SimplePoll
+      title={title}
+      options={options}
+      isVoted={isVoted}
+      onVoted={setIsVoted}
+    />
   );
 }
 
