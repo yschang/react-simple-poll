@@ -1,2 +1,2 @@
 # react-simple-poll
-A simple poll component
+A simple React poll component
