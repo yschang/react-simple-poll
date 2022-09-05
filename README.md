@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+<!-- # react-simple-poll -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-simple-poll
 
-## Available Scripts
+<b>react-simple-poll</b> is a simple poll component.
 
-In the project directory, you can run:
+# ![](sample.png)
 
-### `npm start`
+## Install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### NPM
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm i --save react-simple-poll
+```
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```ts
+import * as React from "react";
+import { useState } from "react";
+import SimplePoll from "./lib/components/SimplePoll";
 
-### `npm run build`
+function App() {
+  const pollData = {
+    title: "What is the best burger?",
+    options: [
+      { text: "In-N-Out", votes: 6 },
+      { text: "Burger King", votes: 2 },
+      { text: "McDonald's", votes: 3 },
+    ],
+  };
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  const { title, options } = pollData;
+  const [isVoted, setIsVoted] = useState(false);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  console.log({ title });
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  return (
+    <SimplePoll
+      title={title}
+      options={options}
+      isVoted={isVoted}
+      onVoted={setIsVoted}
+    />
+  );
+}
 
-### `npm run eject`
+export default App;
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Options
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+You can pass an options object to influence the type of color it produces. The options object accepts the following properties:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```title``` – Required. Title of the poll.
 
-## Learn More
+```options``` – Required. List of options for the poll. Need to use the following format for JSON object: ```[{"text": "In-N-Out", votes: 6}, {"text": "Burger King", votes: 2}, ...]```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```isVoted``` – Required. User will be able to vote if set to ```false```. Otherwise, user won't be able to vote.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```onVoted``` - Required. Action to take when user votes.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```barColor``` – Optional. Specifies the color of each bar. Otherwise, by default, the color of each bar is randomized.
