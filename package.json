@@ -1,6 +1,6 @@
 {
   "name": "react-simple-poll",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple poll component",
   "main": "dist/index.js",
   "scripts": {
