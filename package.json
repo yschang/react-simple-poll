@@ -1,6 +1,6 @@
 {
   "name": "react-simple-poll",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple poll component",
   "main": "dist/index.js",
   "scripts": {
@@ -10,6 +10,17 @@
   },
   "author": "yschang",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "javascript",
+    "poll",
+    "ui",
+    "vote",
+    "voting",
+    "survey",
+    "component",
+    "react-component"
+  ],
   "peerDependencies": {
     "randomcolor": "^0.6.2"
   },
