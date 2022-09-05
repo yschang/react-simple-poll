@@ -28,8 +28,6 @@ const SimplePoll = ({ title, options, isVoted, onVoted, barColor = null }) => {
     return `${votesPercentage}%`;
   };
 
-  console.log({ barColor });
-
   return (
     <div
       style={{

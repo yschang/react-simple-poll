@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { SimplePoll } from "./lib/SimplePoll";
+import SimplePoll from "./lib/components/SimplePoll";
 
 function App() {
   const pollData = {
