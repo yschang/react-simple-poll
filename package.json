@@ -9,7 +9,7 @@
     "start": "react-scripts start"
   },
   "author": "yschang",
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
     "randomcolor": "^0.6.2"
   },
