@@ -34,8 +34,6 @@ function App() {
   const { title, options } = pollData;
   const [isVoted, setIsVoted] = useState(false);
 
-  console.log({ title });
-
   return (
     <SimplePoll
       title={title}
